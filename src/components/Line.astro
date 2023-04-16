@@ -1,0 +1,28 @@
+---
+import clsx from "clsx";
+
+export interface Props {
+    color: "red" | "blue" | "purple";
+}
+
+const { color } = Astro.props;
+---
+
+<div class="w-2 ml-auto mr-auto flex flex-col items-center justify-center">
+    <span
+        class={clsx("w-[1px] h-64 ", {
+            "bg-gradient-to-t from-green via-blue via-30%": color === "blue",
+            "bg-gradient-to-t from-yellow via-red via-30%": color === "red",
+            "bg-gradient-to-t from-pink via-purple via-30%": color === "purple",
+        })}
+    >
+    </span>
+    <div
+        class={clsx("w-[6px] h-[6px] rounded-full", {
+            "bg-green": color === "blue",
+            "bg-yellow": color === "red",
+            "bg-pink": color === "purple",
+        })}
+    >
+    </div>
+</div>

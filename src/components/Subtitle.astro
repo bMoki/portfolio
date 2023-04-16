@@ -1,0 +1,11 @@
+---
+export interface Props {
+    text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<h3 class="font-bold text-base text-gray-300 tracking-[.25rem]">
+    {text.toUpperCase()}
+</h3>

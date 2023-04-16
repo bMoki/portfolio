@@ -1,0 +1,142 @@
+---
+import GlowingButton from "../components/GlowingButton.astro";
+import Header from "../components/Header.astro";
+import Line from "../components/Line.astro";
+import Profile from "../components/Profile.astro";
+import Title from "../components/Title.astro";
+import Layout from "../layouts/Layout.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Comma from "../components/Comma.astro";
+import LineDash from "../components/LineDash.astro";
+import Subtitle from "../components/Subtitle.astro";
+import PolygonBox from "../components/PolygonBox.astro";
+---
+
+<Layout title="Breno's Portfolio">
+	<Header />
+	<main class="flex flex-col mt-52 mb-24 gap-48">
+		<hero class="flex gap-40 justify-center">
+			<Profile />
+			<div class="flex flex-col justify-center gap-8">
+				<div class="flex flex-col justify-center">
+					<h3 class="text-white text-6xl w-full">Olá</h3>
+					<h3 class="text-white text-5xl">sou Breno Sonda.</h3>
+				</div>
+				<div class="flex gap-3 items-center">
+					<h3
+						class="bg-gradient-to-r from-blue to-green text-4xl font-semibold bg-clip-text text-transparent"
+					>
+						Desenvolvedor
+					</h3>
+					<h3
+						class="bg-gradient-to-r from-purple to-pink text-4xl font-semibold bg-clip-text text-transparent"
+					>
+						Full Stack
+					</h3>
+				</div>
+				<div class="flex gap-12 mt-5">
+					<GlowingButton>
+						<span
+							class="block px-11 py-[9px] rounded-lg bg-gray-800"
+							>Contato</span
+						>
+					</GlowingButton>
+				</div>
+			</div>
+		</hero>
+		<div class="flex flex-col justify-center items-center gap-14">
+			<Line color="blue" />
+			<Title color="blue" title="O que faço" />
+			<div
+				style="background-image: url(images/Group_1.svg)"
+				class="bg-no-repeat bg-center w-full h-[513px] mt-16 items-center pt-14 px-14 mb-48"
+			>
+				<div class="flex justify-around">
+					<ServiceCard
+						title="WEB"
+						text="Desenvolvimento de sites programados em Next, React e Typescript"
+						icon="Globe"
+					/>
+					<ServiceCard
+						title="APP"
+						text="Desenvolvimento de aplicativos IOS e Android utilizando React Native"
+						icon="DeviceMobileCamera"
+					/>
+				</div>
+				<div class="flex justify-center items-center h-full">
+					<ServiceCard
+						title="UX"
+						text="Desenvolvimento de protótipos de alta fidelidade utilizando Figma"
+						icon="CompassTool"
+					/>
+				</div>
+			</div>
+			<Line color="red" />
+			<Title color="red" title="Sobre mim" />
+			<div class="flex items-center h-[512px] mt-12">
+				<div class="h-full">
+					<Comma rotate />
+				</div>
+				<span class="text-gray-300 text-xl">
+					Eu sou Breno Sonda, um desenvolvedor <b>Full-Stack</b> com sete
+					anos na area de programação. <br /><br /> Sou <b
+						>proeficiente</b
+					> em desenvolvimento web, mobile e backend, tendo experiência
+					em várias tecnologias, incluindo React, Node e React Native com
+					Typescript.<br /><br />
+					Sou <b>apaixonado</b> por novos desafios e estou sempre atualizado
+					com as últimas tendências e padrões de desenvolvimento.
+				</span>
+				<LineDash />
+				<span class="text-gray-300 text-xl">
+					Eu sou Breno Sonda, um desenvolvedor <b>Full-Stack</b> com sete
+					anos na area de programação. <br /><br /> Sou <b
+						>proeficiente</b
+					> em desenvolvimento web, mobile e backend, tendo experiência
+					em várias tecnologias, incluindo React, Node e React Native com
+					Typescript.<br /><br />
+					Sou <b>apaixonado</b> por novos desafios e estou sempre atualizado
+					com as últimas tendências e padrões de desenvolvimento.
+				</span>
+				<div class="h-full flex items-end py-4">
+					<Comma />
+				</div>
+			</div>
+			<div class="flex flex-col gap-16 items-center">
+				<Subtitle text="minha stack" />
+				<div class="flex gap-6 justify-center">
+					<PolygonBox size="md" border="red" />
+					<PolygonBox size="md" border="red" />
+					<PolygonBox size="md" border="red" />
+					<PolygonBox size="md" border="red" />
+					<PolygonBox size="md" border="red" />
+					<PolygonBox size="md" border="red" />
+				</div>
+			</div>
+			<div class="flex flex-col gap-16 items-center mt-3">
+				<Subtitle text="Outras" />
+				<div class="flex flex-col mt-1">
+					<div class="flex gap-4 justify-center">
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+					</div>
+					<div class="flex gap-4 justify-center">
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Globe from "/images/Globe.svg";
+import DeviceMobileCamera from "/images/DeviceMobileCamera.svg";
+import CompassTool from "/images/CompassTool.svg";
+
+const icons = {
+    Globe: Globe,
+    DeviceMobileCamera: DeviceMobileCamera,
+    CompassTool: CompassTool,
+};
+
+export interface Props {
+    title: string;
+    text: string;
+    icon: keyof typeof icons;
+}
+
+const { icon, text, title } = Astro.props;
+---
+
+<div class="flex flex-col items-center w-72 gap-2">
+    <img src={icons[icon]} alt="" />
+    <h2 class="text-white text-3xl">{title}</h2>
+    <span class="text-gray-300 text-xl text-center">{text}</span>
+</div>
