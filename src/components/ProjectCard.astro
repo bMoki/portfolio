@@ -1,0 +1,72 @@
+---
+///532x342
+import { ArrowSquareOut } from "phosphor-react";
+
+export interface Props {
+    reverse?: boolean;
+    title: string;
+    description: string;
+    site?: string;
+    repository: string;
+    imgUrl: string;
+}
+
+const {
+    reverse = false,
+    title,
+    description,
+    repository,
+    site,
+    imgUrl,
+} = Astro.props;
+---
+
+<div class={`flex items-center ${reverse && "flex-row-reverse"}`}>
+    <div class="max-w-xl group">
+        <img
+            src={imgUrl}
+            alt=""
+            class="rounded-md opacity-70 group-hover:opacity-90"
+        />
+    </div>
+    <div
+        class={`flex flex-col gap-5  justify-center  ${
+            reverse ? "-mr-12 items-start" : "-ml-12 items-end"
+        }`}
+    >
+        <span class="font-semibold text-gray-200 text-3xl">{title}</span>
+        <div
+            class={`flex justify-center items-center bg-gray-900 w-[508px] h-[152px] rounded-md p-5  z-10 ${
+                reverse ? "shadow-3xlR" : "shadow-3xlL"
+            }`}
+        >
+            <span class="text-gray-300 text-base text-center font-semibold"
+                >{description}</span
+            >
+        </div>
+
+        <div class="flex gap-3">
+            <slot />
+        </div>
+        <div class="flex gap-3 items-end">
+            <a
+                target="_blank"
+                href={repository}
+                class="w-8 p-[3px] opacity-50 hover:opacity-100 hover:cursor-pointer"
+            >
+                <img src="images/techs/Github.png" alt="Icone do Github" />
+            </a>
+            {
+                site && (
+                    <a
+                        href={site}
+                        target="_blank"
+                        class="text-gray-300 hover:text-white hover:cursor-pointer "
+                    >
+                        <ArrowSquareOut size={32} />
+                    </a>
+                )
+            }
+        </div>
+    </div>
+</div>

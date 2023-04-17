@@ -9,6 +9,11 @@ module.exports = {
 				sans: ["Barlow", ...defaultTheme.fontFamily.sans],
 				display: ["Lily Script One"]
 			},
+			boxShadow: {
+				'3xlR': '5px 5px 6px 1px rgba(0, 0, 0, 0.4)',
+				'3xlL': '-5px 5px 6px 1px rgba(0, 0, 0, 0.4)',
+				'4xl': '10px 10px 4px 2px rgba(0, 0, 0, 0.6)',
+			}
 			// keyframes: {
 			// 	animated_gradient_title_1: {
 			// 		'0%, 16.667%, 100%': {

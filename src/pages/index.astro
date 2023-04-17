@@ -10,6 +10,32 @@ import Comma from "../components/Comma.astro";
 import LineDash from "../components/LineDash.astro";
 import Subtitle from "../components/Subtitle.astro";
 import PolygonBox from "../components/PolygonBox.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import TechList from "../components/TechList.astro";
+
+export type Tech = {
+	imgUrl: string;
+	name: string;
+	description: string;
+};
+
+const techList: Tech[] = [
+	{
+		imgUrl: "images/techs/Next.svg",
+		name: "NextJS",
+		description: "Description Next js",
+	},
+	{
+		imgUrl: "images/techs/React.svg",
+		name: "React",
+		description: "Description React js",
+	},
+	{
+		imgUrl: "images/techs/Tailwind.svg",
+		name: "Tailwind",
+		description: "Description Tailwindcss",
+	},
+];
 ---
 
 <Layout title="Breno's Portfolio">
@@ -51,7 +77,7 @@ import PolygonBox from "../components/PolygonBox.astro";
 				style="background-image: url(images/Group_1.svg)"
 				class="bg-no-repeat bg-center w-full h-[513px] mt-16 items-center pt-14 px-14 mb-48"
 			>
-				<div class="flex justify-around">
+				<div class="flex justify-around px-20">
 					<ServiceCard
 						title="WEB"
 						text="Desenvolvimento de sites programados em Next, React e Typescript"
@@ -63,7 +89,7 @@ import PolygonBox from "../components/PolygonBox.astro";
 						icon="DeviceMobileCamera"
 					/>
 				</div>
-				<div class="flex justify-center items-center h-full">
+				<div class="flex justify-center items-center h-full mt-10">
 					<ServiceCard
 						title="UX"
 						text="Desenvolvimento de protótipos de alta fidelidade utilizando Figma"
@@ -73,69 +99,257 @@ import PolygonBox from "../components/PolygonBox.astro";
 			</div>
 			<Line color="red" />
 			<Title color="red" title="Sobre mim" />
-			<div class="flex items-center h-[512px] mt-12">
-				<div class="h-full">
+			<div
+				class="flex items-center w-full h-[512px] mt-12 justify-center"
+			>
+				<div class="h-full flex items-start m-4">
 					<Comma rotate />
 				</div>
-				<span class="text-gray-300 text-xl">
-					Eu sou Breno Sonda, um desenvolvedor <b>Full-Stack</b> com sete
-					anos na area de programação. <br /><br /> Sou <b
-						>proeficiente</b
-					> em desenvolvimento web, mobile e backend, tendo experiência
-					em várias tecnologias, incluindo React, Node e React Native com
-					Typescript.<br /><br />
+
+				<span class="text-gray-300 text-xl h-72 w-[532px]">
+					Eu sou Breno Sonda, um desenvolvedor <b>Full-Stack</b> envolvido
+					na area de programação desde o ensino médio. <br /><br /> Sou
+					<b>proeficiente</b> em desenvolvimento web, mobile e backend,
+					tendo experiência em várias tecnologias, incluindo React, Node
+					e React Native com Typescript.<br /><br />
 					Sou <b>apaixonado</b> por novos desafios e estou sempre atualizado
 					com as últimas tendências e padrões de desenvolvimento.
 				</span>
+
 				<LineDash />
-				<span class="text-gray-300 text-xl">
-					Eu sou Breno Sonda, um desenvolvedor <b>Full-Stack</b> com sete
-					anos na area de programação. <br /><br /> Sou <b
-						>proeficiente</b
-					> em desenvolvimento web, mobile e backend, tendo experiência
-					em várias tecnologias, incluindo React, Node e React Native com
-					Typescript.<br /><br />
-					Sou <b>apaixonado</b> por novos desafios e estou sempre atualizado
-					com as últimas tendências e padrões de desenvolvimento.
+				<span class="text-gray-300 text-xl h-72 w-[532px]">
+					Além de ser um desenvolvedor Full-Stack experiente, sou
+					também um grande fã de literatura, adoro ler livros e
+					assistir filmes. <br /><br />Passar tempo com minha família
+					também é uma das minhas atividades favoritas, pois valorizo
+					a importância de <b>equilibrar</b> minha vida pessoal e profissional.
+					<br /><br /> Sempre busco novas maneiras de <b>crescer</b> pessoalmente
+					e profissionalmente.
 				</span>
-				<div class="h-full flex items-end py-4">
+				<div class="h-full flex items-end m-4">
 					<Comma />
 				</div>
 			</div>
 			<div class="flex flex-col gap-16 items-center">
 				<Subtitle text="minha stack" />
 				<div class="flex gap-6 justify-center">
-					<PolygonBox size="md" border="red" />
-					<PolygonBox size="md" border="red" />
-					<PolygonBox size="md" border="red" />
-					<PolygonBox size="md" border="red" />
-					<PolygonBox size="md" border="red" />
-					<PolygonBox size="md" border="red" />
+					<PolygonBox size="md" border="red">
+						<img
+							src="images/techs/React.svg"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
+					<PolygonBox size="md" border="red">
+						<img src="images/techs/Next.svg" alt="" class="w-4/5" />
+					</PolygonBox>
+					<PolygonBox size="md" border="red">
+						<img src="images/techs/Expo.svg" alt="" class="w-4/5" />
+					</PolygonBox>
+					<PolygonBox size="md" border="red">
+						<img
+							src="images/techs/Tailwind.svg"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
+					<PolygonBox size="md" border="red">
+						<img
+							src="images/techs/Fastify.png"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
+					<PolygonBox size="md" border="red">
+						<img
+							src="images/techs/Prisma.svg"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
 				</div>
 			</div>
-			<div class="flex flex-col gap-16 items-center mt-3">
+			<div class="flex flex-col gap-16 items-center mt-3 mb-40">
 				<Subtitle text="Outras" />
 				<div class="flex flex-col mt-1">
 					<div class="flex gap-4 justify-center">
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Nest.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Stitches.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Typescript.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Java.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/SpringBoot.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Docker.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Fauna.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/PlanetScale.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
 					</div>
 					<div class="flex gap-4 justify-center">
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
-						<PolygonBox size="sm" border="silver" />
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Github.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Figma.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Stripe.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Prismic.svg"
+								alt=""
+								class="w-3/5 mix-blend-luminosity"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/NextAuth.svg"
+								alt=""
+								class="w-4/5 mix-blend-luminosity"
+							/>
+						</PolygonBox>
+
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Postgresql.svg"
+								alt=""
+								class="w-4/5 mix-blend-luminosity"
+							/>
+						</PolygonBox>
+						<PolygonBox size="sm" border="silver">
+							<img
+								src="images/techs/Mysql.svg"
+								alt=""
+								class="w-4/5"
+							/>
+						</PolygonBox>
 					</div>
 				</div>
+			</div>
+			<Line color="purple" />
+			<Title color="purple" title="projetos" />
+			<div class="flex flex-col items-center gap-44 mt-14">
+				<ProjectCard
+					title="Coffe Delivery"
+					description="E-commerce for a coffee shop with clean and expandable styling system. The project showcases important concepts in ReactJS, such as state management, ContextAPI, and componentization."
+					repository="https://github.com/bMoki/Coffee-Delivery"
+					site="https://coffee-delivery-ochre.vercel.app/"
+					imgUrl="images/projetosCapa/CoffeeDelivery.png"
+				>
+					<TechList
+						border="purple"
+						size="xs"
+						techList={["React", "NextJS"]}
+					/>
+				</ProjectCard>
+
+				<ProjectCard
+					title="Ignews"
+					description="Ignews is a blog application that provides news and articles about the React world. Users can subscribe to a monthly plan and get access to exclusive content. The project is built using modern frameworks and integrates with various services."
+					repository="https://github.com/bMoki/Ignews"
+					site="https://ignews-eight-lyart.vercel.app/"
+					imgUrl="images/projetosCapa/Ignews.png"
+					reverse
+				>
+					<PolygonBox size="xs" border="purple">
+						<img src="images/techs/Next.svg" alt="" class="w-4/5" />
+					</PolygonBox>
+					<PolygonBox size="xs" border="purple">
+						<img
+							src="images/techs/Typescript.svg"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
+					<PolygonBox size="xs" border="purple">
+						<img
+							src="images/techs/Stripe.svg"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
+					<PolygonBox size="xs" border="purple">
+						<img
+							src="images/techs/Prismic.svg"
+							alt=""
+							class="w-3/5"
+						/>
+					</PolygonBox>
+					<PolygonBox size="xs" border="purple">
+						<img
+							src="images/techs/NextAuth.svg"
+							alt=""
+							class="w-4/5 mix-blend-luminosity"
+						/>
+					</PolygonBox>
+					<PolygonBox size="xs" border="purple">
+						<img
+							src="images/techs/Fauna.svg"
+							alt=""
+							class="w-4/5"
+						/>
+					</PolygonBox>
+				</ProjectCard>
 			</div>
 		</div>
 	</main>
