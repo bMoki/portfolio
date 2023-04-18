@@ -12,6 +12,7 @@ import Subtitle from "../components/Subtitle.astro";
 import PolygonBox from "../components/PolygonBox.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import TechList from "../components/TechList.astro";
+import Footer from "../components/Footer.astro";
 
 export type Tech = {
 	imgUrl: string;
@@ -40,7 +41,9 @@ const techList: Tech[] = [
 
 <Layout title="Breno's Portfolio">
 	<Header />
-	<main class="flex flex-col mt-52 mb-24 gap-48">
+	<main
+		class="flex flex-col mt-52 mb-24 gap-48 max-w-screen-xl ml-auto mr-auto"
+	>
 		<hero class="flex gap-40 justify-center">
 			<Profile />
 			<div class="flex flex-col justify-center gap-8">
@@ -61,12 +64,7 @@ const techList: Tech[] = [
 					</h3>
 				</div>
 				<div class="flex gap-12 mt-5">
-					<GlowingButton>
-						<span
-							class="block px-11 py-[9px] rounded-lg bg-gray-800"
-							>Contato</span
-						>
-					</GlowingButton>
+					<GlowingButton text="Contato" />
 				</div>
 			</div>
 		</hero>
@@ -353,4 +351,5 @@ const techList: Tech[] = [
 			</div>
 		</div>
 	</main>
+	<Footer />
 </Layout>

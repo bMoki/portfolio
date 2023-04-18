@@ -1,9 +1,10 @@
 ---
 export interface Props {
   color?: "red" | "purple";
+  text: string;
 }
 
-const { color } = Astro.props;
+const { color, text } = Astro.props;
 ---
 
 <div class="group relative w-40 h-12">
@@ -12,9 +13,14 @@ const { color } = Astro.props;
   >
   </div>
   <button
-    class="w-40 h-12 relative rounded-lg bg-gradient-to-r from-purple to-pink px-7 py-4 text-gray-100 flex justify-center items-center font-medium text-xl"
-    ><slot /></button
+    class="w-40 h-12 p-[1px] relative rounded-lg bg-gradient-to-r from-purple to-pink text-gray-100 flex justify-center items-center font-medium text-xl"
   >
+    <div
+      class="w-full h-full rounded-lg bg-gray-800 flex justify-center items-center"
+    >
+      {text}
+    </div>
+  </button>
 </div>
 
 <!-- <button

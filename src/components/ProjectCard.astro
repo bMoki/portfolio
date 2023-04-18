@@ -48,13 +48,17 @@ const {
         <div class="flex gap-3">
             <slot />
         </div>
-        <div class="flex gap-3 items-end">
+        <div class="flex gap-3 items-center">
             <a
                 target="_blank"
                 href={repository}
-                class="w-8 p-[3px] opacity-50 hover:opacity-100 hover:cursor-pointer"
+                class="w-7 opacity-50 hover:opacity-100 hover:cursor-pointer"
             >
-                <img src="images/techs/Github.png" alt="Icone do Github" />
+                <img
+                    class="aspect-square"
+                    src="images/icons/GithubCleanLogo.svg"
+                    alt="Icone do Github"
+                />
             </a>
             {
                 site && (

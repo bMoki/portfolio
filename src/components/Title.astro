@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 export interface Props {
     title: string;
-    color: "red" | "blue" | "purple";
+    color?: "red" | "blue" | "purple";
 }
 
 const { title, color } = Astro.props;
@@ -14,6 +14,7 @@ const { title, color } = Astro.props;
         "bg-gradient-to-r from-blue to-green": color === "blue",
         "bg-gradient-to-r from-red to-yellow": color === "red",
         "bg-gradient-to-r from-purple to-pink": color === "purple",
+        "bg-gray-200": color === undefined,
     })}
 >
     {title.toUpperCase()}

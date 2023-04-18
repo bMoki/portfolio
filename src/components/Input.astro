@@ -1,0 +1,13 @@
+---
+import type { HTMLProps } from "react";
+
+export interface Props extends HTMLProps<typeof HTMLInputElement> {}
+
+const { placeholder } = Astro.props;
+---
+
+<input
+    type="text"
+    placeholder={placeholder}
+    class="w-full h-11 px-3 py-1 bg-gray-800 text-base text-gray-200 rounded placeholder:text-gray-300"
+/>
