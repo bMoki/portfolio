@@ -13,30 +13,9 @@ import PolygonBox from "../components/PolygonBox.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import TechList from "../components/TechList.astro";
 import Footer from "../components/Footer.astro";
+import { MainStack } from "../components/MainStack";
+import MainStackList from "../components/MainStackList.astro";
 
-export type Tech = {
-	imgUrl: string;
-	name: string;
-	description: string;
-};
-
-const techList: Tech[] = [
-	{
-		imgUrl: "images/techs/Next.svg",
-		name: "NextJS",
-		description: "Description Next js",
-	},
-	{
-		imgUrl: "images/techs/React.svg",
-		name: "React",
-		description: "Description React js",
-	},
-	{
-		imgUrl: "images/techs/Tailwind.svg",
-		name: "Tailwind",
-		description: "Description Tailwindcss",
-	},
-];
 ---
 
 <Layout title="Breno's Portfolio">
@@ -131,40 +110,7 @@ const techList: Tech[] = [
 			<div class="flex flex-col gap-16 items-center">
 				<Subtitle text="minha stack" />
 				<div class="flex gap-6 justify-center">
-					<PolygonBox size="md" border="red">
-						<img
-							src="images/techs/React.svg"
-							alt=""
-							class="w-4/5"
-						/>
-					</PolygonBox>
-					<PolygonBox size="md" border="red">
-						<img src="images/techs/Next.svg" alt="" class="w-4/5" />
-					</PolygonBox>
-					<PolygonBox size="md" border="red">
-						<img src="images/techs/Expo.svg" alt="" class="w-4/5" />
-					</PolygonBox>
-					<PolygonBox size="md" border="red">
-						<img
-							src="images/techs/Tailwind.svg"
-							alt=""
-							class="w-4/5"
-						/>
-					</PolygonBox>
-					<PolygonBox size="md" border="red">
-						<img
-							src="images/techs/Fastify.png"
-							alt=""
-							class="w-4/5"
-						/>
-					</PolygonBox>
-					<PolygonBox size="md" border="red">
-						<img
-							src="images/techs/Prisma.svg"
-							alt=""
-							class="w-4/5"
-						/>
-					</PolygonBox>
+          <MainStackList techList={['react','next','tailwind','expo','fastify', 'prisma']}/>
 				</div>
 			</div>
 			<div class="flex flex-col gap-16 items-center mt-3 mb-40">

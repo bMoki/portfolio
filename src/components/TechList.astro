@@ -1,5 +1,5 @@
 ---
-import type { Tech } from "../pages/index.astro";
+import { techs } from "../utils/techs";
 import PolygonBox from "./PolygonBox.astro";
 
 export interface Props {
@@ -7,23 +7,7 @@ export interface Props {
     size: "xs" | "sm" | "md";
     techList: Array<string>;
 }
-const techs: Tech[] = [
-    {
-        imgUrl: "images/techs/Next.svg",
-        name: "NextJS",
-        description: "Description Next js",
-    },
-    {
-        imgUrl: "images/techs/React.svg",
-        name: "React",
-        description: "Description React js",
-    },
-    {
-        imgUrl: "images/techs/Tailwind.svg",
-        name: "Tailwind",
-        description: "Description Tailwindcss",
-    },
-];
+
 const { techList, border, size } = Astro.props;
 ---
 

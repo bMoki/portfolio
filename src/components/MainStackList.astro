@@ -1,0 +1,19 @@
+---
+import { techs } from "../utils/techs";
+import { MainStack } from "./MainStack";
+
+export interface Props {
+    techList: Array<string>;
+}
+
+const { techList } = Astro.props;
+---
+
+{
+    techs.map((tech) => {
+        if (techList.find((techUsed) => tech.alias === techUsed))
+            return (
+                <MainStack description={tech.description} imgUrl={tech.imgUrl} name={tech.name} client:load/>
+            );
+    })
+}

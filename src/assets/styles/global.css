@@ -1,0 +1,25 @@
+/* @config "../../tailwind.config.cjs"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  .polygon {
+    clip-path: polygon(50% 0, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+  }
+  
+  .shadow-base {
+    filter: drop-shadow(0 16px 4px rgba(0, 0, 0, 1));
+  }
+  
+  .shadow-base:hover {
+    filter: drop-shadow(0 20px 12px rgba(0, 0, 0, 0.2));
+  }
+  
+  .back {
+    transform: rotateY(180deg)
+  }
+}
+
