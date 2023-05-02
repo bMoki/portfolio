@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
-import { SealQuestion } from "./icons/SealQuestion";
+import { SealQuestion } from "@phosphor-icons/react";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { gray } from "tailwindcss/colors";
 
 type Props = {
   name: string;
@@ -30,9 +31,9 @@ export function MainStack({ description, imgUrl, name }: Props) {
         className="transition-all duration-300 shadow-base"
         onClick={() => setFlipped((state) => !state)}
       >
-        <div className="polygon bg-white flex justify-center items-center bg-gradient-to-br from-red to-yellow w-[114px] h-[114px] hover:cursor-pointer">
+        <div className="polygon bg-white flex justify-center items-center bg-gradient-to-br from-red to-yellow xl:w-[114px] xl:h-[114px] lg:w-[114px] lg:h-[114px] md:w-[96px] md:h-[96px] w-[76px] h-[76px] hover:cursor-pointer">
           {showBack ? (
-            <div className="back polygon bg-black flex justify-center w-[112px] h-[112px]">
+            <div className="back polygon bg-black flex justify-center xl:w-[112px] xl:h-[112px] lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
               <div className="flex justify-center items-center p-4 text-center flex-col gap-2">
                 <span className="text-sm font-semibold text-gray-200">
                   {name}
@@ -40,7 +41,11 @@ export function MainStack({ description, imgUrl, name }: Props) {
                 <Tooltip.Provider delayDuration={400}>
                   <Tooltip.Root>
                     <Tooltip.Trigger>
-                      <SealQuestion size={20} />
+                      <SealQuestion
+                        size={20}
+                        weight="fill"
+                        className="text-gray-200 hover:text-white"
+                      />
                     </Tooltip.Trigger>
                     <Tooltip.Portal>
                       <Tooltip.Content
@@ -55,8 +60,8 @@ export function MainStack({ description, imgUrl, name }: Props) {
               </div>
             </div>
           ) : (
-            <div className="polygon bg-black flex justify-center w-[112px] h-[112px]">
-              <img src={imgUrl} alt="" className="w-4/5" />
+            <div className="polygon bg-black flex justify-center xl:w-[112px] xl:h-[112px] lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
+              <img src={imgUrl} alt="" className="w-3/4 md:w-4/5" />
             </div>
           )}
         </div>

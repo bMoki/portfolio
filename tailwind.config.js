@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        services: "url('../../public/images/ServicesBG.svg')",
+      },
       fontFamily: {
         sans: ["var(--font-barlow)"],
         display: ["var(--font-lilyScriptOne)"],

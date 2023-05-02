@@ -17,19 +17,23 @@ export default function Home() {
   return (
     <div className="bg-gray-800 ml-auto mr-auto pt-8">
       <Header />
-      <main className="flex flex-col mt-52 mb-24 gap-48 max-w-screen-xl  ml-auto mr-auto">
-        <div className="flex gap-40 justify-center">
+      {/*flex flex-col mt-52 mb-24 gap-48 max-w-screen-xl  ml-auto mr-auto*/}
+      <main className="flex flex-col mt-52 mb-24 gap-32 md:gap-48 max-w-screen-xl  ml-auto mr-auto">
+        {/*flex gap-40 justify-center*/}
+        <div className="flex flex-col gap-8 justify-center items-center lg:flex-row lg:gap-40">
           <Profile />
-          <div className="flex flex-col justify-center gap-8">
+          <div className="flex flex-col justify-center gap-2 md:gap-8">
             <div className="flex flex-col justify-center">
-              <h3 className="text-white text-6xl w-full">Olá</h3>
-              <h3 className="text-white text-5xl">sou Breno Sonda.</h3>
+              <h3 className="text-white text-xl md:text-6xl w-full">Olá</h3>
+              <h3 className="text-white text-xl md:text-5xl">
+                sou Breno Sonda.
+              </h3>
             </div>
             <div className="flex gap-3 items-center">
-              <h3 className="bg-gradient-to-r from-blue to-green text-4xl font-semibold bg-clip-text text-transparent">
+              <h3 className="bg-gradient-to-r from-blue to-green text-2xl md:text-4xl font-semibold bg-clip-text text-transparent">
                 Desenvolvedor
               </h3>
-              <h3 className="bg-gradient-to-r from-purple to-pink text-4xl font-semibold bg-clip-text text-transparent">
+              <h3 className="bg-gradient-to-r from-purple to-pink text-2xl md:text-4xl font-semibold bg-clip-text text-transparent">
                 Full Stack
               </h3>
             </div>
@@ -41,11 +45,8 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center gap-14">
           <Line color="blue" />
           <Title color="blue" title="O que faço" />
-          <div
-            style={{ backgroundImage: "url(images/Group_1.svg)" }}
-            className="bg-no-repeat bg-center w-full h-[513px] mt-16 items-center pt-14 px-14 mb-48"
-          >
-            <div className="flex justify-around px-20">
+          <div className="flex flex-col bg-none md:bg-services bg-no-repeat bg-center  w-full h:full md:h-[513px] mt-16 items-center md:pt-14 md:px-14 mb-32 md:mb-48 gap-16">
+            <div className="items-center flex-col justify-center flex md:flex-row md:justify-around md:px-20 gap-16">
               <ServiceCard
                 title="WEB"
                 text="Desenvolvimento de sites programados em Next, React e Typescript"
@@ -57,7 +58,7 @@ export default function Home() {
                 icon="DeviceMobileCamera"
               />
             </div>
-            <div className="flex justify-center items-center h-full mt-10">
+            <div className="justify-center flex md:justify-center md:items-center h-full mt-0 md:mt-10">
               <ServiceCard
                 title="UX"
                 text="Desenvolvimento de protótipos de alta fidelidade utilizando Figma"
@@ -104,74 +105,49 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-16 items-center">
             <Subtitle text="minha stack" />
-            <div className="flex gap-6 justify-center">
-              <MainStackList
-                techList={[
-                  "react",
-                  "next",
-                  "tailwind",
-                  "expo",
-                  "fastify",
-                  "prisma",
-                ]}
-              />
-            </div>
+
+            <MainStackList
+              techList={[
+                "react",
+                "next",
+                "tailwind",
+                "expo",
+                "fastify",
+                "prisma",
+              ]}
+            />
           </div>
           <div className="flex flex-col gap-16 items-center mt-3 mb-40">
             <Subtitle text="Outras" />
             <div className="flex flex-col mt-1">
-              <div className="flex gap-4 justify-center">
-                <TechList
-                  size={"sm"}
-                  border={"silver"}
-                  techList={[
-                    "nest",
-                    "stitches",
-                    "typescript",
-                    "java",
-                    "springboot",
-                    "docker",
-                    "fauna",
-                    "planetscale",
-                  ]}
-                />
-              </div>
-              <div className="flex gap-4 justify-center">
-                <PolygonBox size="sm" border="silver">
-                  <img src="images/techs/Github.svg" alt="" className="w-4/5" />
-                </PolygonBox>
-                <PolygonBox size="sm" border="silver">
-                  <img src="images/techs/Figma.svg" alt="" className="w-4/5" />
-                </PolygonBox>
-                <PolygonBox size="sm" border="silver">
-                  <img src="images/techs/Stripe.svg" alt="" className="w-4/5" />
-                </PolygonBox>
-                <PolygonBox size="sm" border="silver">
-                  <img
-                    src="images/techs/Prismic.svg"
-                    alt=""
-                    className="w-3/5 mix-blend-luminosity"
-                  />
-                </PolygonBox>
-                <PolygonBox size="sm" border="silver">
-                  <img
-                    src="images/techs/NextAuth.svg"
-                    alt=""
-                    className="w-4/5 mix-blend-luminosity"
-                  />
-                </PolygonBox>
+              <TechList
+                size={"sm"}
+                border={"silver"}
+                techList={[
+                  "nest",
+                  "stitches",
+                  "typescript",
+                  "java",
+                  "springboot",
+                  "docker",
+                  "fauna",
+                  "planetscale",
+                ]}
+              />
 
-                <PolygonBox size="sm" border="silver">
-                  <img
-                    src="images/techs/Postgresql.svg"
-                    alt=""
-                    className="w-4/5 mix-blend-luminosity"
-                  />
-                </PolygonBox>
-                <PolygonBox size="sm" border="silver">
-                  <img src="images/techs/Mysql.svg" alt="" className="w-4/5" />
-                </PolygonBox>
-              </div>
+              <TechList
+                size={"sm"}
+                border={"silver"}
+                techList={[
+                  "github",
+                  "figma",
+                  "stripe",
+                  "prismic",
+                  "nextauth",
+                  "postgresql",
+                  "mysql",
+                ]}
+              />
             </div>
           </div>
           <Line color="purple" />
@@ -183,13 +159,8 @@ export default function Home() {
               repository="https://github.com/bMoki/Coffee-Delivery"
               site="https://coffee-delivery-ochre.vercel.app/"
               imgUrl="images/projetosCapa/CoffeeDelivery.png"
-            >
-              <TechList
-                border="purple"
-                size="xs"
-                techList={["React", "NextJS"]}
-              />
-            </ProjectCard>
+              techUsed={["react", "next"]}
+            />
 
             <ProjectCard
               title="Ignews"
@@ -198,34 +169,8 @@ export default function Home() {
               site="https://ignews-eight-lyart.vercel.app/"
               imgUrl="images/projetosCapa/Ignews.png"
               reverse
-            >
-              <PolygonBox size="xs" border="purple">
-                <img src="images/techs/Next.svg" alt="" className="w-4/5" />
-              </PolygonBox>
-              <PolygonBox size="xs" border="purple">
-                <img
-                  src="images/techs/Typescript.svg"
-                  alt=""
-                  className="w-4/5"
-                />
-              </PolygonBox>
-              <PolygonBox size="xs" border="purple">
-                <img src="images/techs/Stripe.svg" alt="" className="w-4/5" />
-              </PolygonBox>
-              <PolygonBox size="xs" border="purple">
-                <img src="images/techs/Prismic.svg" alt="" className="w-3/5" />
-              </PolygonBox>
-              <PolygonBox size="xs" border="purple">
-                <img
-                  src="images/techs/NextAuth.svg"
-                  alt=""
-                  className="w-4/5 mix-blend-luminosity"
-                />
-              </PolygonBox>
-              <PolygonBox size="xs" border="purple">
-                <img src="images/techs/Fauna.svg" alt="" className="w-4/5" />
-              </PolygonBox>
-            </ProjectCard>
+              techUsed={["react"]}
+            />
           </div>
         </div>
       </main>

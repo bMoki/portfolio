@@ -20,8 +20,8 @@ export function DeviceMobileCamera() {
           y2="56.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#22D3EE" />
-          <stop offset="1" stop-color="#3AD39C" />
+          <stop stopColor="#22D3EE" />
+          <stop offset="1" stopColor="#3AD39C" />
         </linearGradient>
       </defs>
     </svg>

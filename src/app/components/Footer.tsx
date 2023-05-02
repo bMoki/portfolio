@@ -6,10 +6,10 @@ import { Title } from "./Title";
 export function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-800/50 from-20% via-gray-200/50  to-gray-800/50 to-70%  pt-[1px]">
-      <div className="flex gap-40 bg-gray-900 w-full px-48">
+      <div className="flex gap-40 bg-gray-900 w-full px-48 md:max-xl:gap-24 md:max-xl:px-16 ">
         <div className="w-full flex flex-col py-32 gap-12">
           <div className="flex">
-            <Title title="Entre em\xa0" />
+            <Title title={"Entre em\xa0"} />
             <Title title="Contato" color="purple" />
           </div>
           <div className="flex flex-col gap-4 text-gray-300 text-xl">
@@ -47,15 +47,19 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <form className="w-full flex flex-col pt-32 pb-28 gap-4 pr-32">
-          <div className="flex gap-4">
+        <form className="w-full flex flex-col pt-32 pb-28 gap-4 ">
+          <div className="flex gap-4 w-4/5 md:max-xl:w-full">
             <Input placeholder="Nome Completo" />
             <Input placeholder="Assunto" />
           </div>
-          <Input placeholder="Email" />
-          <TextArea placeholder="Mensagem" />
-          <div className="flex justify-end w-full pt-11 pb-4">
-            <GlowingButton text="Enviar" />
+          <div className="w-4/5 md:max-xl:w-full">
+            <Input placeholder="Email" />
+          </div>
+          <div className="w-4/5 md:max-xl:w-full">
+            <TextArea placeholder="Mensagem" />
+          </div>
+          <div className="flex justify-end w-4/5 pt-11 pb-4 md:max-xl:w-full">
+            <GlowingButton text="Enviar" active={true} />
           </div>
         </form>
       </div>

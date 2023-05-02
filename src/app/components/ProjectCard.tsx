@@ -1,6 +1,7 @@
 "use client";
 import { ArrowSquareOut } from "@phosphor-icons/react";
 import { ReactNode } from "react";
+import { TechList } from "./TechList";
 
 interface Props {
   reverse?: boolean;
@@ -9,7 +10,7 @@ interface Props {
   site?: string;
   repository: string;
   imgUrl: string;
-  children: ReactNode;
+  techUsed: Array<string>;
 }
 
 export function ProjectCard({
@@ -19,7 +20,7 @@ export function ProjectCard({
   repository,
   site,
   imgUrl,
-  children,
+  techUsed,
 }: Props) {
   return (
     <div className={`flex items-center ${reverse && "flex-row-reverse"}`}>
@@ -32,7 +33,9 @@ export function ProjectCard({
       </div>
       <div
         className={`flex flex-col gap-5  justify-center  ${
-          reverse ? "-mr-12 items-start" : "-ml-12 items-end"
+          reverse
+            ? "xl:-mr-12 lg:-mr-24 md:-mr-40 items-start"
+            : "xl:-ml-12 lg:-ml-24 md:-ml-40 items-end"
         }`}
       >
         <span className="font-semibold text-gray-200 text-3xl">{title}</span>
@@ -41,12 +44,14 @@ export function ProjectCard({
             reverse ? "shadow-3xlR" : "shadow-3xlL"
           }`}
         >
-          <span className="text-gray-300 text-base text-center font-semibold">
+          <span className="text-gray-300 text-base text-center">
             {description}
           </span>
         </div>
 
-        <div className="flex gap-3">{children}</div>
+        <div className="flex gap-3">
+          <TechList border="purple" size="xs" techList={techUsed} />
+        </div>
         <div className="flex gap-3 items-center">
           <a
             target="_blank"

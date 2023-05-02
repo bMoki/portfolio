@@ -25,18 +25,22 @@ export function PolygonBox({
           "bg-gradient-to-br from-white to-gray-300": border === "silver",
           "bg-gradient-to-br from-purple to-pink ": border === "purple",
           "w-[38px] h-[38px]": size === "xs",
-          "w-[90px] h-[90px]": size === "sm",
-          "w-[114px] h-[114px]": size === "md",
-          "w-[362px] h-[362px]": size === "lg",
+          "xl:w-[90px] xl:h-[90px] lg:w-[90px] lg:h-[90px] md:w-[64px] md:h-[64px] w-[52px] h-[52px]":
+            size === "sm",
+          "xl:w-[114px] xl:h-[114px] lg:w-[114px] lg:h-[114px] md:w-[96px] md:h-[96px]":
+            size === "md",
+          "w-[200px] h-[200px] md:w-[362px] md:h-[362px]": size === "lg",
           "hover:cursor-pointer": hover,
         })}
       >
         <div
           className={clsx("polygon bg-black flex justify-center ", {
             "w-[36px] h-[36px]": size === "xs",
-            "w-[88px] h-[88px]": size === "sm",
-            "w-[112px] h-[112px]": size === "md",
-            "w-[360px] h-[360px]": size === "lg",
+            "xl:w-[88px] xl:h-[88px] lg:w-[88px] lg:h-[88px] md:w-[62px] md:h-[62px] w-[50px] h-[50px]":
+              size === "sm",
+            "xl:w-[112px] xl:h-[112px] lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px]":
+              size === "md",
+            "w-[198px] h-[198px] md:w-[360px] md:h-[360px]": size === "lg",
           })}
         >
           {children}
