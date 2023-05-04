@@ -17,23 +17,22 @@ export default function Home() {
   return (
     <div className="bg-gray-800 ml-auto mr-auto pt-8">
       <Header />
-      {/*flex flex-col mt-52 mb-24 gap-48 max-w-screen-xl  ml-auto mr-auto*/}
-      <main className="flex flex-col mt-52 mb-24 gap-32 md:gap-48 max-w-screen-xl  ml-auto mr-auto">
-        {/*flex gap-40 justify-center*/}
+
+      <main className="flex flex-col mt-40 sm:mt-52 mb-24 gap-32 md:gap-48 max-w-screen-xl  ml-auto mr-auto">
         <div className="flex flex-col gap-8 justify-center items-center lg:flex-row lg:gap-40">
           <Profile />
           <div className="flex flex-col justify-center gap-2 md:gap-8">
             <div className="flex flex-col justify-center">
-              <h3 className="text-white text-xl md:text-6xl w-full">Olá</h3>
-              <h3 className="text-white text-xl md:text-5xl">
+              <h3 className="text-white text-3xl md:text-6xl w-full">Olá</h3>
+              <h3 className="text-white text-3xl md:text-5xl">
                 sou Breno Sonda.
               </h3>
             </div>
             <div className="flex gap-3 items-center">
-              <h3 className="bg-gradient-to-r from-blue to-green text-2xl md:text-4xl font-semibold bg-clip-text text-transparent">
+              <h3 className="bg-gradient-to-r from-blue to-green text-2xl sm:text-3xl md:text-4xl font-semibold bg-clip-text text-transparent">
                 Desenvolvedor
               </h3>
-              <h3 className="bg-gradient-to-r from-purple to-pink text-2xl md:text-4xl font-semibold bg-clip-text text-transparent">
+              <h3 className="bg-gradient-to-r from-purple to-pink text-2xl sm:text-3xl md:text-4xl font-semibold bg-clip-text text-transparent">
                 Full Stack
               </h3>
             </div>
@@ -68,7 +67,7 @@ export default function Home() {
           </div>
           <Line color="red" />
           <Title color="red" title="Sobre mim" />
-          <div className="flex items-center w-full h-[512px] mt-12 justify-center">
+          <div className="flex items-center w-full h-[1024] md:h-[616px] lg:h-[512px]  md:mt-0 lg:mt-12 justify-center">
             <div className="h-full flex items-start m-4">
               <Comma rotate />
             </div>
@@ -103,7 +102,7 @@ export default function Home() {
               <Comma />
             </div>
           </div>
-          <div className="flex flex-col gap-16 items-center">
+          <div className="flex flex-col gap-16 items-center mt-12 lg:mt-0">
             <Subtitle text="minha stack" />
 
             <MainStackList
@@ -119,36 +118,27 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-16 items-center mt-3 mb-40">
             <Subtitle text="Outras" />
-            <div className="flex flex-col mt-1">
-              <TechList
-                size={"sm"}
-                border={"silver"}
-                techList={[
-                  "nest",
-                  "stitches",
-                  "typescript",
-                  "java",
-                  "springboot",
-                  "docker",
-                  "fauna",
-                  "planetscale",
-                ]}
-              />
-
-              <TechList
-                size={"sm"}
-                border={"silver"}
-                techList={[
-                  "github",
-                  "figma",
-                  "stripe",
-                  "prismic",
-                  "nextauth",
-                  "postgresql",
-                  "mysql",
-                ]}
-              />
-            </div>
+            <TechList
+              size={"sm"}
+              border={"silver"}
+              techList={[
+                "nest",
+                "stitches",
+                "typescript",
+                "java",
+                "springboot",
+                "docker",
+                "fauna",
+                "planetscale",
+                "github",
+                "figma",
+                "stripe",
+                "prismic",
+                "nextauth",
+                "postgresql",
+                "mysql",
+              ]}
+            />
           </div>
           <Line color="purple" />
           <Title color="purple" title="projetos" />

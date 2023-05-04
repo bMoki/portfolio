@@ -15,7 +15,7 @@ export const techs: Tech[] = [
   {
     alias: "react",
     imgUrl: "images/techs/React.svg",
-    name: "React & React Native",
+    name: "React",
     description:
       "ReactJS é uma biblioteca para construção de interfaces web enquanto React Native é um framework para desenvolvimento de aplicativos móveis nativos, ambos baseados em componentes reutilizáveis e criados pela mesma equipe do Facebook.",
   },

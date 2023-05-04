@@ -17,7 +17,7 @@ export function PolygonBox({
   children,
 }: Props) {
   return (
-    <div className={shadow ? "shadowCustom" : ""}>
+    <div className={`${shadow && "shadowCustom"}`}>
       <div
         className={clsx("polygon bg-white flex justify-center items-center", {
           "bg-transparent": border === undefined,

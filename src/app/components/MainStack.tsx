@@ -9,9 +9,10 @@ type Props = {
   name: string;
   imgUrl: string;
   description: string;
+  className?: string;
 };
 
-export function MainStack({ description, imgUrl, name }: Props) {
+export function MainStack({ description, imgUrl, name, className }: Props) {
   const [flipped, setFlipped] = useState(false);
   const [showBack, setShowBack] = useState(false);
 
@@ -26,16 +27,21 @@ export function MainStack({ description, imgUrl, name }: Props) {
   }, [flipped]);
 
   return (
-    <Tilt scale={1.2} transitionSpeed={1000} flipHorizontally={flipped}>
+    <Tilt
+      scale={1.2}
+      transitionSpeed={1000}
+      flipHorizontally={flipped}
+      className={className}
+    >
       <div
         className="transition-all duration-300 shadow-base"
         onClick={() => setFlipped((state) => !state)}
       >
-        <div className="polygon bg-white flex justify-center items-center bg-gradient-to-br from-red to-yellow xl:w-[114px] xl:h-[114px] lg:w-[114px] lg:h-[114px] md:w-[96px] md:h-[96px] w-[76px] h-[76px] hover:cursor-pointer">
+        <div className="polygon bg-white flex justify-center items-center bg-gradient-to-br from-red to-yellow lg:w-[114px] lg:h-[114px] md:w-[96px] md:h-[96px] w-[76px] h-[76px] hover:cursor-pointer">
           {showBack ? (
-            <div className="back polygon bg-black flex justify-center xl:w-[112px] xl:h-[112px] lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
-              <div className="flex justify-center items-center p-4 text-center flex-col gap-2">
-                <span className="text-sm font-semibold text-gray-200">
+            <div className="back polygon bg-black flex justify-center  lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
+              <div className="flex justify-center items-center py-4 px-3 lg:px-4 text-center flex-col gap-1 md:gap-2">
+                <span className="text-xs font-normal text-gray-200 md:text-xs lg:text-sm  md:font-semibold ">
                   {name}
                 </span>
                 <Tooltip.Provider delayDuration={400}>
@@ -60,7 +66,7 @@ export function MainStack({ description, imgUrl, name }: Props) {
               </div>
             </div>
           ) : (
-            <div className="polygon bg-black flex justify-center xl:w-[112px] xl:h-[112px] lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
+            <div className="polygon bg-black flex justify-center  lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
               <img src={imgUrl} alt="" className="w-3/4 md:w-4/5" />
             </div>
           )}

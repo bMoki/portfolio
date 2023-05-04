@@ -7,8 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        16: "repeat(16, minmax(0, 1fr))",
+      },
       backgroundImage: {
         services: "url('../../public/images/ServicesBG.svg')",
+        line: "url('../../public/images/LineDashed.svg')",
       },
       fontFamily: {
         sans: ["var(--font-barlow)"],

@@ -6,18 +6,28 @@ interface Props {
 }
 
 export function MainStackList({ techList }: Props) {
+  let col = 0;
   return (
-    <div className="flex xl:gap-6 lg:gap-4 md:gap-2 justify-center">
+    <div className="grid grid-cols-6 gap-3">
       {techs.map((tech) => {
-        if (techList.find((techUsed) => tech.alias === techUsed))
+        if (techList.find((techUsed) => tech.alias === techUsed)) {
+          col++;
           return (
             <MainStack
               key={tech.alias}
               description={tech.description}
               imgUrl={tech.imgUrl}
               name={tech.name}
+              className={
+                col === 1
+                  ? "col-start-3 col-span-2 md:col-start-auto md:col-span-1"
+                  : col === 2
+                  ? "col-start-2 col-span-2 md:col-start-auto md:col-span-1"
+                  : "col-span-2 md:col-span-1"
+              }
             />
           );
+        }
       })}
     </div>
   );
