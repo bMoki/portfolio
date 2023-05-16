@@ -10,7 +10,7 @@ import { Profile } from "./components/Profile";
 import { ProjectCard } from "./components/ProjectCard";
 import { ServiceCard } from "./components/ServiceCard";
 import { Subtitle } from "./components/Subtitle";
-import { TechList } from "./components/TechList";
+import { TechGrid } from "./components/TechGrid";
 import { Title } from "./components/Title";
 
 export default function Home() {
@@ -67,16 +67,16 @@ export default function Home() {
           </div>
           <Line color="red" />
           <Title color="red" title="Sobre mim" />
-          <div className="flex items-center w-full h-[1024] md:h-[616px] lg:h-[512px]  md:mt-0 lg:mt-12 justify-center">
-            <div className="h-full flex items-start m-4">
+          <div className="flex flex-col lg:flex-row items-center px-8 w-full h-[1024] lg:h-[512px]  md:mt-0 lg:mt-12 justify-center">
+            <div className="w-full lg:w-fit h-full flex items-start m-4">
               <Comma rotate />
             </div>
 
-            <span className="text-gray-300 text-xl h-72 w-[532px]">
+            <span className="text-gray-300 text-xl h-fit w-full  px-6">
               Eu sou Breno Sonda, um desenvolvedor <b>Full-Stack</b> envolvido
               na area de programação desde o ensino médio. <br />
               <br /> Sou
-              <b>proeficiente</b> em desenvolvimento web, mobile e backend,
+              <b> proficiente</b> em desenvolvimento web, mobile e backend,
               tendo experiência em várias tecnologias, incluindo React, Node e
               React Native com Typescript.
               <br />
@@ -86,7 +86,7 @@ export default function Home() {
             </span>
 
             <LineDash />
-            <span className="text-gray-300 text-xl h-72 w-[532px]">
+            <span className="text-gray-300 text-xl h-fit w-full   px-6">
               Além de ser um desenvolvedor Full-Stack experiente, sou também um
               grande fã de literatura, adoro ler livros e assistir filmes.{" "}
               <br />
@@ -98,7 +98,7 @@ export default function Home() {
               <br /> Sempre busco novas maneiras de <b>crescer</b> pessoalmente
               e profissionalmente.
             </span>
-            <div className="h-full flex items-end m-4">
+            <div className="w-full lg:w-fit h-full flex justify-end items-end m-4">
               <Comma />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-16 items-center mt-3 mb-40">
             <Subtitle text="Outras" />
-            <TechList
+            <TechGrid
               size={"sm"}
               border={"silver"}
               techList={[

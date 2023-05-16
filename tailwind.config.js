@@ -14,10 +14,6 @@ module.exports = {
         services: "url('../../public/images/ServicesBG.svg')",
         line: "url('../../public/images/LineDashed.svg')",
       },
-      fontFamily: {
-        sans: ["var(--font-barlow)"],
-        display: ["var(--font-lilyScriptOne)"],
-      },
       boxShadow: {
         "3xlR": "5px 5px 6px 1px rgba(0, 0, 0, 0.4)",
         "3xlL": "-5px 5px 6px 1px rgba(0, 0, 0, 0.4)",

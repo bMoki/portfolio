@@ -10,17 +10,27 @@ interface Props {
   techList: Array<string>;
 }
 
-export function TechList({ techList, border, size }: Props) {
+export function TechGrid({ techList, border, size }: Props) {
+  let col = 0;
   return (
     <div
-      className={`flex ${size === "xs" ? "gap-1" : "gap-2 md:gap-3 lg:gap-4"}`}
+      className={`grid grid-cols-12 md:grid-cols-16 ${
+        size === "xs" ? "gap-1" : "gap-2 md:gap-3 lg:gap-4"
+      }`}
     >
       {techs.map((tech) => {
         if (techList.find((techUsed) => tech.alias === techUsed)) {
+          col++;
           return (
             <Tooltip.Provider delayDuration={400} key={tech.alias}>
               <Tooltip.Root>
-                <Tooltip.Trigger>
+                <Tooltip.Trigger
+                  className={clsx("col-span-2", {
+                    "col-start-2 md:col-start-auto": col === 7,
+                    "col-start-3 md:col-start-auto": col === 12,
+                    "md:col-start-2": col === 9,
+                  })}
+                >
                   <PolygonBox size={size} border={border}>
                     <img
                       src={tech.imgUrl}
