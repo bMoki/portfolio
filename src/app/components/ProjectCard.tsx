@@ -39,15 +39,15 @@ export function ProjectCard({
           onClick={handleShowDescription}
         >
           {showDescription && (
-            <div className="z-20 absolute inset-0 flex justify-center items-center  hover:cursor-pointer p-5">
+            <div className=" z-20 absolute inset-0 flex justify-center items-center  hover:cursor-pointer p-5">
               {description}
             </div>
           )}
           <img
             src={imgUrl}
             alt=""
-            className={clsx("rounded-md opacity-80 cursor-pointer", {
-              "group-hover:opacity-100 ": !showDescription,
+            className={clsx("rounded-md cursor-pointer", {
+              "group-hover:opacity-100 opacity-80 ": !showDescription,
               "opacity-10": showDescription,
             })}
           />

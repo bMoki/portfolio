@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { SealQuestion } from "@phosphor-icons/react";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { gray } from "tailwindcss/colors";
 
 type Props = {
   name: string;
