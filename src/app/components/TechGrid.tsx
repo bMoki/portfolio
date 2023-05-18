@@ -14,8 +14,8 @@ export function TechGrid({ techList, border, size }: Props) {
   let col = 0;
   return (
     <div
-      className={`grid grid-cols-12 md:grid-cols-16 ${
-        size === "xs" ? "gap-1" : "gap-2 md:gap-3 lg:gap-4"
+      className={`grid grid-cols-12 md:grid-cols-16 px-2${
+        size === "xs" ? "gap-1" : "gap-1 sm:gap-2 md:gap-3 lg:gap-4"
       }`}
     >
       {techs.map((tech) => {

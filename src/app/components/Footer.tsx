@@ -1,7 +1,6 @@
-import { GlowingButton } from "./GlowingButton";
-import { Input } from "./Input";
-import { TextArea } from "./TextArea";
+import "react-toastify/dist/ReactToastify.css";
 import { Title } from "./Title";
+import { Form } from "./Form";
 
 export function Footer() {
   return (
@@ -47,21 +46,7 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <form className="w-full flex flex-col pt-0 md:pt-32 pb-28 gap-4 lg:pr-40">
-          <div className="flex flex-col md:flex-row gap-4 w-full">
-            <Input placeholder="Nome Completo" />
-            <Input placeholder="Assunto" />
-          </div>
-          <div className="w-full">
-            <Input placeholder="Email" />
-          </div>
-          <div className="w-full">
-            <TextArea placeholder="Mensagem" />
-          </div>
-          <div className="flex justify-end pt-11 pb-4 w-full">
-            <GlowingButton text="Enviar" active={true} />
-          </div>
-        </form>
+        <Form />
       </div>
     </footer>
   );
