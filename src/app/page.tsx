@@ -5,7 +5,6 @@ import { Header } from "./components/Header";
 import { Line } from "./components/Line";
 import { LineDash } from "./components/LineDash";
 import { MainStackList } from "./components/MainStackList";
-import { PolygonBox } from "./components/PolygonBox";
 import { Profile } from "./components/Profile";
 import { ProjectCard } from "./components/ProjectCard";
 import { ServiceCard } from "./components/ServiceCard";

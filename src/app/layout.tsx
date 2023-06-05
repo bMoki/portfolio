@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${barlow.className} bg-gray-800`}>
+    <html lang="pt-BR" className={`${barlow.variable} bg-gray-800`}>
       <body>{children}</body>
     </html>
   );
