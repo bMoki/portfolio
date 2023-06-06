@@ -5,6 +5,7 @@ import { TechList } from "./TechList";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import clsx from "clsx";
 import { useInView } from "../hooks/useInView";
+import Image from "next/image";
 
 interface Props {
   reverse?: boolean;
@@ -121,7 +122,7 @@ export function ProjectCard({
             reverse ? "shadow-3xlR" : "shadow-3xlL"
           }`}
         >
-          <span className="text-gray-300 text-base text-center">
+          <span className="text-gray-200 text-base text-center">
             {description}
           </span>
         </div>
@@ -131,6 +132,7 @@ export function ProjectCard({
         </div>
         <div className="flex gap-3 items-center">
           <a
+            about="Go to repository"
             target="_blank"
             href={repository}
             className="w-7 opacity-50 hover:opacity-100 hover:cursor-pointer"
@@ -143,6 +145,7 @@ export function ProjectCard({
           </a>
           {site && (
             <a
+              about="Go to site"
               href={site}
               target="_blank"
               className="text-gray-300 hover:text-white hover:cursor-pointer "

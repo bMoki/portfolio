@@ -13,7 +13,7 @@ export function Comma({ rotate = false }: Props) {
         rotate && "rotate-180"
       }`}
     >
-      "
+      &quot;
     </h1>
   );
 }

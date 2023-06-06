@@ -10,14 +10,20 @@ interface Props {
 export function GlowingButton({ text, disabled = false, onClick }: Props) {
   return (
     <div
-      className={`group relative w-full md:w-40 h-12 transition-all duration-1000 ${
-        disabled && "opacity-60"
-      }`}
+      className={clsx(
+        "group relative w-full md:w-40 h-12 transition-all duration-1000",
+        {
+          "opacity-60": disabled,
+        }
+      )}
     >
       <div
-        className={`absolute -inset-1 rounded-lg opacity-60 blur-xl transition-all duration-1000 ${
-          !disabled && "animate-pulse bg-gradient-to-r from-purple to-pink"
-        } group-hover:opacity-100`}
+        className={clsx(
+          "absolute -inset-1 rounded-lg opacity-60 blur-xl transition-all duration-1000  group-hover:opacity-100",
+          {
+            "animate-pulse bg-gradient-to-r from-purple to-pink": !disabled,
+          }
+        )}
       ></div>
       <button
         type="button"

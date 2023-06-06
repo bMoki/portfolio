@@ -10,9 +10,9 @@ export function Header() {
 
   if (isBreakpoint) {
     return (
-      <header className="px-8 max-w-screen-lg ml-auto mr-auto">
+      <header className="px-8 max-w-screen-lg ml-auto mr-auto" id="header">
         <div className="relative inline-block text-left">
-          <Popover.Root modal>
+          <Popover.Root>
             <Popover.Trigger asChild>
               <button type="button">
                 <List size={32} className="text-gray-100 hover:opacity-70" />
@@ -29,10 +29,10 @@ export function Header() {
             >
               <ul className="flex flex-col sm:flex-row sm:justify-around lg:justify-between p-4 gap-2">
                 <li className="list-none w-auto lg:w-32">
-                  <MenuItem title="o que faço" href="oquefaço" />
+                  <MenuItem title="o que faço" href="#oquefaço" />
                 </li>
                 <li className="list-none lg:w-32">
-                  <MenuItem title="sobre mim" href="sobremim" />
+                  <MenuItem title="sobre mim" href="#sobremim" />
                 </li>
                 <li className="list-none lg:w-32">
                   <MenuItem title="projetos" href="#projetos" />
@@ -49,7 +49,7 @@ export function Header() {
   }
 
   return (
-    <header className="max-w-screen-lg ml-auto mr-auto">
+    <header className="max-w-screen-lg ml-auto mr-auto" id="header">
       <ul className="flex justify-around lg:justify-between">
         <li className="list-none lg:w-32">
           <MenuItem title="o que faço" href="#oquefaço" />

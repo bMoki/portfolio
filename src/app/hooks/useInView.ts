@@ -1,5 +1,8 @@
-import { useInView as useInViewOrigin } from "react-intersection-observer";
+import {
+  useInView as useInViewOrigin,
+  IntersectionOptions,
+} from "react-intersection-observer";
 
-export function useInView() {
-  return useInViewOrigin({ triggerOnce: true });
+export function useInView(props?: IntersectionOptions) {
+  return useInViewOrigin({ triggerOnce: true, ...props });
 }

@@ -8,6 +8,7 @@ export function Hero() {
   const { ref, inView } = useInView();
   return (
     <section
+      id="hero"
       className="flex flex-col gap-8 justify-center items-center lg:flex-row lg:gap-40"
       ref={ref}
     >
@@ -50,7 +51,9 @@ export function Hero() {
             }
           )}
         >
-          <GlowingButton text="Contato" />
+          <a href="#contato">
+            <GlowingButton text="Contato" />
+          </a>
         </div>
       </div>
     </section>

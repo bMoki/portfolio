@@ -10,7 +10,7 @@ interface Props {
 
 export function MainStackList({ techList }: Props) {
   let col = 0;
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({ threshold: 1 });
   return (
     <div className={clsx("grid grid-cols-6 gap-3")} ref={ref}>
       {techs.map((tech, i) => {

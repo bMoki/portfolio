@@ -51,7 +51,7 @@ export function Form() {
   }
 
   return (
-    <form className="w-full flex flex-col pt-0 md:pt-32 pb-28 gap-4 lg:pr-40">
+    <form className="w-full flex flex-col pt-0 lg:pt-32  gap-4 sm:pr-12 xl:pr-32">
       <div className="flex flex-col md:flex-row gap-4 w-full">
         <Input
           placeholder="Nome Completo"

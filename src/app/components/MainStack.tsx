@@ -4,6 +4,7 @@ import Tilt from "react-parallax-tilt";
 import { SealQuestion } from "@phosphor-icons/react";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import clsx from "clsx";
+import Image from "next/image";
 
 type Props = {
   name: string;
@@ -57,7 +58,7 @@ export function MainStack({
             <div className="back polygon bg-black flex justify-center  lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
               <div className="flex justify-center items-center py-4 px-3 lg:px-4 text-center flex-col gap-1 md:gap-2">
                 <span className="text-xs font-normal text-gray-200 md:text-xs lg:text-sm  md:font-semibold ">
-                  {name + index}
+                  {name}
                 </span>
                 <Tooltip.Provider delayDuration={400}>
                   <Tooltip.Root>
@@ -70,7 +71,7 @@ export function MainStack({
                     </Tooltip.Trigger>
                     <Tooltip.Portal>
                       <Tooltip.Content
-                        className="max-w-md flex justify-center items-center rounded-lg p-8 text-xl text-gray-100 shadow-4xl bg-gray-900 text-center"
+                        className="max-w-md flex justify-center items-center rounded-lg p-3 text-lg text-gray-100 shadow-4xl bg-gray-900 text-center"
                         sideOffset={50}
                       >
                         {description}
