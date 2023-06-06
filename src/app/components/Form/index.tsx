@@ -12,40 +12,42 @@ export function Form() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const [isLoading, setIsLoading] = useState(false);
+  function clear() {
+    setEmail("");
+    setMessage("");
+    setName("");
+    setSubject("");
+  }
 
   const isFormInvalid = !name || !subject || !email || !message;
 
   async function handleSubmit() {
-    setIsLoading(true);
-    try {
-      const res = sendEmail({ name, subject, email, message });
+    const res = sendEmail({ name, subject, email, message });
 
-      toast.promise(
-        res,
-        {
-          pending: "Enviando email",
-          success: {
-            render() {
-              return "❤️ Obrigado pelo contato!";
-            },
-            icon: false,
+    toast.promise(
+      res,
+      {
+        pending: "Enviando email",
+        success: {
+          render() {
+            clear();
+            return "❤️ Obrigado pelo contato!";
           },
-          error: "Ocorreu um erro! 🤯",
+          icon: false,
         },
-        {
-          theme: "dark",
-          hideProgressBar: true,
-          position: "bottom-right",
-          autoClose: 3000,
-          rtl: false,
-          pauseOnFocusLoss: true,
-          draggable: true,
-          pauseOnHover: true,
-        }
-      );
-    } catch (err) {}
-    setIsLoading(false);
+        error: "Ocorreu um erro! 🤯",
+      },
+      {
+        theme: "dark",
+        hideProgressBar: true,
+        position: "bottom-right",
+        autoClose: 3000,
+        rtl: false,
+        pauseOnFocusLoss: true,
+        draggable: true,
+        pauseOnHover: true,
+      }
+    );
   }
 
   return (

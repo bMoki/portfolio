@@ -1,3 +1,5 @@
+"use client";
+
 import { PolygonBox } from "./PolygonBox";
 
 export function Profile() {

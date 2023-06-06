@@ -1,5 +1,6 @@
+"use client";
 import clsx from "clsx";
-import { ReactNode } from "react";
+import { ForwardedRef, ReactNode } from "react";
 
 interface Props {
   border?: "red" | "silver" | "purple";
@@ -7,6 +8,8 @@ interface Props {
   hover?: boolean;
   shadow?: boolean;
   children: ReactNode;
+  ForwardRef?: ForwardedRef<HTMLDivElement>;
+  className?: string;
 }
 
 export function PolygonBox({
@@ -15,9 +18,14 @@ export function PolygonBox({
   hover = false,
   shadow = false,
   children,
+  ForwardRef,
+  className,
 }: Props) {
   return (
-    <div className={`${shadow && "shadowCustom"}`}>
+    <div
+      className={`${shadow && "shadowCustom"} ${className}`}
+      ref={ForwardRef}
+    >
       <div
         className={clsx("polygon bg-white flex justify-center items-center", {
           "bg-transparent": border === undefined,

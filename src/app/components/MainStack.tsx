@@ -3,15 +3,25 @@ import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { SealQuestion } from "@phosphor-icons/react";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import clsx from "clsx";
 
 type Props = {
   name: string;
   imgUrl: string;
   description: string;
   className?: string;
+  index: number;
+  inView: boolean;
 };
 
-export function MainStack({ description, imgUrl, name, className }: Props) {
+export function MainStack({
+  description,
+  imgUrl,
+  name,
+  className,
+  index,
+  inView,
+}: Props) {
   const [flipped, setFlipped] = useState(false);
   const [showBack, setShowBack] = useState(false);
 
@@ -33,7 +43,13 @@ export function MainStack({ description, imgUrl, name, className }: Props) {
       className={className}
     >
       <div
-        className="transition-all duration-300 shadow-base"
+        style={{
+          transitionDelay: `${index * 200}ms`,
+        }}
+        className={clsx(`transition-all duration-[2000ms] shadow-base `, {
+          "translate-x-[500%] opacity-0": !inView,
+          "translate-x-0": inView,
+        })}
         onClick={() => setFlipped((state) => !state)}
       >
         <div className="polygon bg-white flex justify-center items-center bg-gradient-to-br from-red to-yellow lg:w-[114px] lg:h-[114px] md:w-[96px] md:h-[96px] w-[76px] h-[76px] hover:cursor-pointer">
@@ -41,7 +57,7 @@ export function MainStack({ description, imgUrl, name, className }: Props) {
             <div className="back polygon bg-black flex justify-center  lg:w-[112px] lg:h-[112px] md:w-[94px] md:h-[94px] w-[74px] h-[74px]">
               <div className="flex justify-center items-center py-4 px-3 lg:px-4 text-center flex-col gap-1 md:gap-2">
                 <span className="text-xs font-normal text-gray-200 md:text-xs lg:text-sm  md:font-semibold ">
-                  {name}
+                  {name + index}
                 </span>
                 <Tooltip.Provider delayDuration={400}>
                   <Tooltip.Root>

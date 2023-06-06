@@ -1,9 +1,9 @@
 "use client";
 import * as Popover from "@radix-ui/react-popover";
-import { useMediaQuery } from "../hooks/useMediaQuery";
-import { MenuItem } from "./MenuItem";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { MenuItem } from "../MenuItem";
 import clsx from "clsx";
-import { Hamburger, List } from "@phosphor-icons/react";
+import { List } from "@phosphor-icons/react";
 
 export function Header() {
   const isBreakpoint = useMediaQuery(639);
@@ -29,16 +29,16 @@ export function Header() {
             >
               <ul className="flex flex-col sm:flex-row sm:justify-around lg:justify-between p-4 gap-2">
                 <li className="list-none w-auto lg:w-32">
-                  <MenuItem title="o que faço" link="" />
+                  <MenuItem title="o que faço" href="oquefaço" />
                 </li>
                 <li className="list-none lg:w-32">
-                  <MenuItem title="sobre mim" link="" />
+                  <MenuItem title="sobre mim" href="sobremim" />
                 </li>
                 <li className="list-none lg:w-32">
-                  <MenuItem title="projetos" link="" />
+                  <MenuItem title="projetos" href="#projetos" />
                 </li>
                 <li className="list-none lg:w-32">
-                  <MenuItem title="contato" link="" />
+                  <MenuItem title="contato" href="#contato" />
                 </li>
               </ul>
             </Popover.Content>
@@ -52,16 +52,16 @@ export function Header() {
     <header className="max-w-screen-lg ml-auto mr-auto">
       <ul className="flex justify-around lg:justify-between">
         <li className="list-none lg:w-32">
-          <MenuItem title="o que faço" link="" />
+          <MenuItem title="o que faço" href="#oquefaço" />
         </li>
         <li className="list-none lg:w-32">
-          <MenuItem title="sobre mim" link="" />
+          <MenuItem title="sobre mim" href="#sobremim" />
         </li>
         <li className="list-none lg:w-32">
-          <MenuItem title="projetos" link="" />
+          <MenuItem title="projetos" href="#projetos" />
         </li>
         <li className="list-none lg:w-32">
-          <MenuItem title="contato" link="" />
+          <MenuItem title="contato" href="#contato" />
         </li>
       </ul>
     </header>

@@ -22,26 +22,6 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-barlow)"],
       },
-      // keyframes: {
-      // 	animated_gradient_title_1: {
-      // 		'0%, 16.667%, 100%': {
-      // 			opacity: 1
-      // 		},
-
-      // 		'33.333%, 83.333%': {
-      // 			opacity: 0
-      // 		},
-      // 	},
-      // 	animated_gradient_title_2: {
-      // 		'0%, 16.667%, 66.667%, 100%': {
-      // 			opacity: 0
-      // 		},
-
-      // 		'33.333%, 50%': {
-      // 			opacity: 1
-      // 		}
-      // 	}
-      // }
     },
     colors: {
       transparent: "transparent",

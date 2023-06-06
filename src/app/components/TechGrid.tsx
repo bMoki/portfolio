@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { techs } from "../utils/techs";
 import { PolygonBox } from "./PolygonBox";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { useInView } from "../hooks/useInView";
 
 interface Props {
   border: "purple" | "red" | "silver";
@@ -12,20 +13,27 @@ interface Props {
 
 export function TechGrid({ techList, border, size }: Props) {
   let col = 0;
+  const { ref, inView } = useInView();
   return (
     <div
-      className={`grid grid-cols-12 md:grid-cols-16 px-2${
+      ref={ref}
+      className={`grid grid-cols-12 md:grid-cols-16 px-2 ${
         size === "xs" ? "gap-1" : "gap-1 sm:gap-2 md:gap-3 lg:gap-4"
       }`}
     >
-      {techs.map((tech) => {
+      {techs.map((tech, index) => {
         if (techList.find((techUsed) => tech.alias === techUsed)) {
           col++;
           return (
             <Tooltip.Provider delayDuration={400} key={tech.alias}>
               <Tooltip.Root>
                 <Tooltip.Trigger
-                  className={clsx("col-span-2", {
+                  style={{
+                    transitionDelay: `${index * 100}ms`,
+                  }}
+                  className={clsx("col-span-2 transition-all duration-1000", {
+                    "translate-x-[500%] opacity-0": !inView,
+                    "translate-x-0": inView,
                     "col-start-2 md:col-start-auto": col === 7,
                     "col-start-3 md:col-start-auto": col === 12,
                     "md:col-start-2": col === 9,

@@ -1,9 +1,10 @@
 "use client";
 import { ArrowSquareOut } from "@phosphor-icons/react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { TechList } from "./TechList";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import clsx from "clsx";
+import { useInView } from "../hooks/useInView";
 
 interface Props {
   reverse?: boolean;
@@ -31,9 +32,11 @@ export function ProjectCard({
     setShowDescription((state) => !state);
   }
 
+  const { ref, inView } = useInView();
+
   if (isBreakpoint) {
     return (
-      <div className="flex flex-col gap-6 p-12 md:p-0">
+      <div className="flex flex-col gap-6 p-12 md:p-0" ref={ref}>
         <div
           className="max-w-xl group text-gray-100 text-base text-center relative"
           onClick={handleShowDescription}
@@ -88,7 +91,12 @@ export function ProjectCard({
     );
   }
   return (
-    <div className={`flex items-center ${reverse && "flex-row-reverse"}`}>
+    <div
+      className={clsx("flex items-center transition-all duration-1000", {
+        "flex-row-reverse": reverse,
+      })}
+      ref={ref}
+    >
       <div className="max-w-xl group">
         <img
           src={imgUrl}
@@ -97,11 +105,15 @@ export function ProjectCard({
         />
       </div>
       <div
-        className={`flex flex-col gap-5  justify-center  ${
-          reverse
-            ? "xl:-mr-12 lg:-mr-24 md:-mr-40 items-start"
-            : "xl:-ml-12 lg:-ml-24 md:-ml-40 items-end"
-        }`}
+        className={clsx(
+          "flex flex-col gap-5  justify-center transition-all duration-1000",
+          {
+            "xl:-mr-12 lg:-mr-24 md:-mr-40 items-start": reverse && inView,
+            "xl:-ml-12 lg:-ml-24 md:-ml-40 items-end": !reverse && inView,
+            "-ml-96 items-end opacity-0": !reverse && !inView,
+            "-mr-96 items-end opacity-0": reverse && !inView,
+          }
+        )}
       >
         <span className="font-semibold text-gray-200 text-3xl">{title}</span>
         <div

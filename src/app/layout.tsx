@@ -1,11 +1,6 @@
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 import { barlow } from "./utils/fonts";
-// import { Barlow } from "next/font/google";
-
-// const barlow = Barlow({
-//   weight: ["400", "500", "600", "700"],
-//   subsets: ["latin"],
-// });
 
 export const metadata = {
   title: "Create Next App",

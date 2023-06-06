@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { techs } from "../utils/techs";
 import { PolygonBox } from "./PolygonBox";
 import * as Tooltip from "@radix-ui/react-tooltip";
+import { useInView } from "../hooks/useInView";
 
 interface Props {
   border: "purple" | "red" | "silver";
@@ -11,16 +12,27 @@ interface Props {
 }
 
 export function TechList({ techList, border, size }: Props) {
+  const { ref, inView } = useInView();
+
   return (
     <div
       className={`flex ${size === "xs" ? "gap-1" : "gap-2 md:gap-3 lg:gap-4"}`}
+      ref={ref}
     >
-      {techs.map((tech) => {
+      {techs.map((tech, index) => {
         if (techList.find((techUsed) => tech.alias === techUsed)) {
           return (
             <Tooltip.Provider delayDuration={400} key={tech.alias}>
               <Tooltip.Root>
-                <Tooltip.Trigger>
+                <Tooltip.Trigger
+                  style={{
+                    transitionDelay: `${index * 200}ms`,
+                  }}
+                  className={clsx("transition-all duration-1000", {
+                    "translate-x-0": inView,
+                    "translate-x-[600%] opacity-0": !inView,
+                  })}
+                >
                   <PolygonBox size={size} border={border}>
                     <img
                       src={tech.imgUrl}

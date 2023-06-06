@@ -1,15 +1,14 @@
-import "react-toastify/dist/ReactToastify.css";
-import { Title } from "./Title";
-import { Form } from "./Form";
+import { Title } from "../Title";
+import { Form } from "../Form";
 
 export function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-800/50 from-20% via-gray-200/50  to-gray-800/50 to-70%  pt-[1px]">
       <div className="flex flex-col md:gap-40 bg-gray-900 w-full px-12 md:max-xl:gap-24 md:max-xl:px-16 md:flex-row">
-        <div className="w-full flex flex-col py-32 gap-12">
+        <div className="w-full flex flex-col pt-32 pb-12 gap-12">
           <div className="flex flex-col sm:flex-row">
-            <Title title={"Entre em\xa0"} />
-            <Title title="Contato" color="purple" />
+            <Title title={"Entre em\xa0"} animation={false} />
+            <Title title="Contato" color="purple" animation={false} />
           </div>
           <div className="flex flex-col gap-4 text-gray-300 text-xl">
             <span>
